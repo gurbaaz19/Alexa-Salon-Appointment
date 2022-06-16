@@ -1,0 +1,414 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "serenity salon",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "CustomerAuthenticationIntent",
+          "slots": [
+            {
+              "name": "Name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "{Name}",
+                "I am {Name}",
+                "my name is {Name}"
+              ]
+            },
+            {
+              "name": "Phone",
+              "type": "AMAZON.PhoneNumber",
+              "samples": [
+                "My mobile number is {Phone}",
+                "My phone number is {Phone}",
+                "{Phone}"
+              ]
+            }
+          ],
+          "samples": [
+            "{Name} {Phone}",
+            "{Name} and {Phone}",
+            "My mobile number is {Phone}",
+            "My phone number is {Phone}",
+            "{Phone}",
+            "{Name}",
+            "I am {Name}",
+            "My name is {Name}",
+            "I am {Name} and contact number is {Phone}",
+            "My name is {Name} and my phone number is {Phone}"
+          ]
+        },
+        {
+          "name": "BookServiceIntent",
+          "slots": [
+            {
+              "name": "services",
+              "type": "services_slot",
+              "samples": [
+                "I want to get {services}",
+                "Make it {services}",
+                "{services}"
+              ],
+              "multipleValues": {
+                "enabled": true
+              }
+            }
+          ],
+          "samples": [
+            "make it {services}",
+            "{services}",
+            "I want to get {services}"
+          ]
+        },
+        {
+          "name": "DateIntent",
+          "slots": [
+            {
+              "name": "date",
+              "type": "AMAZON.DATE",
+              "samples": [
+                "make it {date}",
+                "I am free on {date}",
+                "{date}"
+              ]
+            }
+          ],
+          "samples": [
+            "{date}",
+            "I\u0027ll be free on {date}",
+            "Make it {date}"
+          ]
+        },
+        {
+          "name": "TimeIntent",
+          "slots": [
+            {
+              "name": "time",
+              "type": "AMAZON.TIME",
+              "samples": [
+                "{time} would be fine",
+                "{time} works",
+                "{time}"
+              ]
+            }
+          ],
+          "samples": [
+            "make it {time}",
+            "{time} is okay",
+            "{time} works for me"
+          ]
+        },
+        {
+          "name": "ConfirmBookingIntent",
+          "slots": [
+            {
+              "name": "yes",
+              "type": "Yes",
+              "samples": [
+                "{yes} sure",
+                "{yes}"
+              ]
+            }
+          ],
+          "samples": [
+            "{yes}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "0",
+              "name": {
+                "value": "hairwash"
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "skin care special"
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "face care special"
+              }
+            },
+            {
+              "id": "4",
+              "name": {
+                "value": "hair care special"
+              }
+            },
+            {
+              "id": "5",
+              "name": {
+                "value": "nail care special"
+              }
+            },
+            {
+              "id": "6",
+              "name": {
+                "value": "hair straightening"
+              }
+            },
+            {
+              "id": "7",
+              "name": {
+                "value": "haircut"
+              }
+            },
+            {
+              "id": "8",
+              "name": {
+                "value": "threading"
+              }
+            },
+            {
+              "id": "9",
+              "name": {
+                "value": "pedicure"
+              }
+            },
+            {
+              "id": "10",
+              "name": {
+                "value": "manicure"
+              }
+            },
+            {
+              "id": "11",
+              "name": {
+                "value": "waxing"
+              }
+            },
+            {
+              "id": "12",
+              "name": {
+                "value": "facial"
+              }
+            },
+            {
+              "id": "13",
+              "name": {
+                "value": "bleach"
+              }
+            }
+          ],
+          "name": "services_slot"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "I Agree"
+              }
+            },
+            {
+              "name": {
+                "value": "Fine"
+              }
+            },
+            {
+              "name": {
+                "value": "Okay"
+              }
+            },
+            {
+              "name": {
+                "value": "Cool"
+              }
+            },
+            {
+              "name": {
+                "value": "Yes"
+              }
+            }
+          ],
+          "name": "Yes"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CustomerAuthenticationIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "Name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1558307938109.771538562712"
+              }
+            },
+            {
+              "name": "Phone",
+              "type": "AMAZON.PhoneNumber",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1558307938109.1502629844564"
+              }
+            }
+          ]
+        },
+        {
+          "name": "BookServiceIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "services",
+              "type": "services_slot",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.482556712051.828940656892"
+              }
+            }
+          ]
+        },
+        {
+          "name": "DateIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "date",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.744804246688.1063290243522"
+              }
+            }
+          ]
+        },
+        {
+          "name": "TimeIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "time",
+              "type": "AMAZON.TIME",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.791427340903.1401623555888"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ConfirmBookingIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "yes",
+              "type": "Yes",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1419701757807.1179709673181"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "SKILL_RESPONSE"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1558307938109.771538562712",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Okay, your phone number is {Phone} , but what is your name?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What is your name?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1558307938109.1502629844564",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{Name} , what is your mobile number?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What is your mobile number?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.482556712051.828940656892",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please choose the services you want to avail"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.744804246688.1063290243522",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please choose a date"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.791427340903.1401623555888",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please choose a time"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1419701757807.1179709673181",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Do you confirm the appointment?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "16"
+}
